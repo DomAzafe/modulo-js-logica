@@ -1,7 +1,9 @@
-let saldo = 0;
-let valor = -50;
+const prompt = require("prompt-sync")();
 
-if (saldo > valor){
+let saldo = Number(prompt("Qual é o saldo na conta?"));
+let valor = Number(prompt("Qual é o valor do pix?"));
+
+if (saldo >= valor){
     saldo = saldo - valor;
     console.log("Pix enviado. Saldo: R$", saldo.toFixed(2));
 } else {
