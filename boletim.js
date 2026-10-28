@@ -24,6 +24,18 @@ for (let i = 0; i < alunos.length; i++){
     else {console.log(`Aluno: ${alunos[i]}\nCondição: ${mensagem_verdadeira}\nMédia: ${medias[i]}`);}
 }
 
+let soma = 0;
+let aprovados = 0;
+
+for(i = 0; i < medias.length; i++){
+    if(medias[i] >= media_escola){
+        aprovados++
+    }
+    soma = soma + medias[i];
+}
+
+console.log(`Aprovados: ${aprovados}\nSoma da Médias: ${soma}`)
+
 // if (media1 >= 7){
 //     console.log("Aprovado");}
 // else {console.log("Reprovado");}
