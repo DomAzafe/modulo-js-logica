@@ -20,8 +20,8 @@ const media_escola = 7;
 for (let i = 0; i < alunos.length; i++){
 
     if (medias[i] >= media_escola){
-       console.log(alunos[i], mensagem_verdadeira);}
-    else {console.log(alunos[i], mensagem_falso);}
+       console.log(`Aluno: ${alunos[i]}\nCondição: ${mensagem_verdadeira}\nMédia: ${medias[i]}`);}
+    else {console.log(`Aluno: ${alunos[i]}\nCondição: ${mensagem_verdadeira}\nMédia: ${medias[i]}`);}
 }
 
 // if (media1 >= 7){
