@@ -15,10 +15,11 @@ const alunos = ["Gabriel", "Ana", "Alex", "Nailton", "Moyses", "Nícolas"];
 const medias = [8, 4.6, 6.9, 9, 2.6, 1]
 const mensagem_verdadeira = "Aprovado";
 const mensagem_falso = "Reprovado";
+const media_escola = 7;
 
 for (let i = 0; i < alunos.length; i++){
 
-    if (medias[i] >= 7){
+    if (medias[i] >= media_escola){
        console.log(alunos[i], mensagem_verdadeira);}
     else {console.log(alunos[i], mensagem_falso);}
 }
