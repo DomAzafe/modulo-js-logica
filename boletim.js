@@ -11,30 +11,30 @@
 // const aluno6 = "Nícolas";
 // const media6 = 1;
 
-const alunos = ["Gabriel", "Ana", "Alex", "Nailton", "Moyses", "Nícolas"];
-const medias = [8, 4.6, 6.9, 9, 2.6, 1]
-const mensagem_verdadeira = "Aprovado";
-const mensagem_falso = "Reprovado";
-const media_escola = 7;
+// const alunos = ["Gabriel", "Ana", "Alex", "Nailton", "Moyses", "Nícolas"];
+// const medias = [8, 4.6, 6.9, 9, 2.6, 1]
+// const mensagem_verdadeira = "Aprovado";
+// const mensagem_falso = "Reprovado";
+// const media_escola = 7;
 
-for (let i = 0; i < alunos.length; i++){
+// for (let i = 0; i < alunos.length; i++){
 
-    if (medias[i] >= media_escola){
-       console.log(`Aluno: ${alunos[i]}\nCondição: ${mensagem_verdadeira}\nMédia: ${medias[i]}`);}
-    else {console.log(`Aluno: ${alunos[i]}\nCondição: ${mensagem_verdadeira}\nMédia: ${medias[i]}`);}
-}
+//     if (medias[i] >= media_escola){
+//        console.log(`Aluno: ${alunos[i]}\nCondição: ${mensagem_verdadeira}\nMédia: ${medias[i]}`);}
+//     else {console.log(`Aluno: ${alunos[i]}\nCondição: ${mensagem_verdadeira}\nMédia: ${medias[i]}`);}
+// }
 
-let soma = 0;
-let aprovados = 0;
+// let soma = 0;
+// let aprovados = 0;
 
-for(i = 0; i < medias.length; i++){
-    if(medias[i] >= media_escola){
-        aprovados++
-    }
-    soma = soma + medias[i];
-}
+// for(i = 0; i < medias.length; i++){
+//     if(medias[i] >= media_escola){
+//         aprovados++
+//     }
+//     soma = soma + medias[i];
+// }
 
-console.log(`Aprovados: ${aprovados}\nSoma da Médias: ${soma}`)
+// console.log(`Aprovados: ${aprovados}\nSoma da Médias: ${soma}`)
 
 // if (media1 >= 7){
 //     console.log("Aprovado");}
@@ -59,3 +59,33 @@ console.log(`Aprovados: ${aprovados}\nSoma da Médias: ${soma}`)
 // if (media6 >= 7){
 //     console.log("Aprovado");}
 // else {console.log("Reprovado");}
+
+const prompt = require("prompt-sync")();
+const alunos = ["Gabriel", "Ana", "Alex", "Nailton", "Moyses", "Nícolas"];
+const medias = [];
+const media_escola = 7;
+let input;
+let soma = 0;
+let aprovados = 0;
+
+while ( input != -1) {
+    input = Number(prompt (`Adicione uma média: `));
+    
+    if (input >=0) {
+        medias.push(input);
+    }
+    
+}
+
+
+
+for(i = 0; i < medias.length; i++){
+    if(medias[i] >= media_escola){
+        aprovados++
+    }
+    soma = soma + medias[i];
+}
+
+console.log(`Aprovados: ${aprovados}\nSoma da Médias: ${soma.toFixed(2)}`)
+
+
