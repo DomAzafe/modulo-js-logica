@@ -11,6 +11,7 @@ const TESTE = false;       // true = a sorte fica fixa, para o roteiro de teste
 // ===== HERÓI =====
 let nome = prompt("Qual é o nome do seu herói? ");
 let vida = 10;
+const limite_vida = 10;
 let veneno = 0;            // quantos passos o veneno ainda dura
 const inventario = [];
 
@@ -30,9 +31,10 @@ while (jogando) {
   } else if (local === "vila") {
     console.log("");
     console.log("[VILA] Um velho pescador te entrega uma moeda furada: 'Não vale nada. Guarde mesmo assim.'");
-    if (inventario.includes("moeda furada") === false) {
+    if (inventario.includes("moeda furada") === false && inventario.includes("corda") === false) {
       inventario.push("moeda furada");
-    }
+      jogador_pegou_moeda = true;
+    } else (console.log("Você já pegou a moeda!"))
     console.log("1 - ir para a floresta   2 - ir para o poço");
     let escolha = prompt("> ");
     if (escolha === "1") {
@@ -72,10 +74,13 @@ while (jogando) {
       local = "vila";
     } else if (escolha === "2") {
       vida = vida + 3;
+      if (vida > limite_vida){ vida = limite_vida; }
       console.log("A água é gelada. Vida: " + vida);
+      inventario.splice(inventario.findIndex(moeda => moeda === "moeda furada"), 1);
     } else if (escolha === "3" && inventario.includes("moeda furada")) {
       console.log("A moeda cai sem fazer barulho. Uma corda sobe do fundo do poço, sozinha.");
       inventario.push("corda");
+      inventario.slice;
       console.log("Inventário: " + inventario);
     }
   } else if (local === "ponte") {
