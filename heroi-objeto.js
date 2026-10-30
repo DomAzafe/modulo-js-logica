@@ -17,7 +17,24 @@ const aranha = {
 
 }
 
-console.log(heroi.vida);
-heroi.vida = 15;
-heroi = 15; //erro de constante sendo mudada (Assignment to constant variable)
-console.log(heroi.vida);
+tomarDano("Exodia", 3);
+
+function tomarDano(heroi, dano){
+    heroi.vida = heroi.vida - dano;
+
+    if (heroi.vida <= 0){
+        console.log(`O Herói ${heroi} foi Vashcado!`)
+    }  
+    
+
+
+}
+
+// console.log(heroi.vida);
+// heroi.vida = 15;
+// heroi = 15; //erro de constante sendo mudada (Assignment to constant variable)
+// console.log(heroi.vida);
+
+console.log(heroi.inventario);
+heroi.inventario.push("moeda furada");
+console.log(`O Heroi ${heroi.nome} recebeu o item ${heroi.inventario} !`);
